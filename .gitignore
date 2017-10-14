@@ -32,3 +32,7 @@ sysinfo.txt
 # Builds
 *.apk
 *.unitypackage
+Assets/_Complete-Game/
+Assets/2D Roguelike Upgrade Guide 5x.pdf.meta
+Assets/2D Roguelike Upgrade Guide 5x.pdf
+Assets/_Complete-Game.meta
