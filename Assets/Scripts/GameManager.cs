@@ -8,7 +8,7 @@ public class GameManager : MonoBehaviour {
 
     public static GameManager Instance = null;
 
-    private int level = 1;
+    private int level = 3;
 
 	// Use this for initialization
 	void Awake () {
