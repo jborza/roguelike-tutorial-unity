@@ -20,16 +20,20 @@ public abstract class MovingObject : MonoBehaviour
         inverseMoveTime = 1f / moveTime;
     }
 
+    //returns true if move can be executed
     protected bool Move(int xDir, int yDir, out RaycastHit2D hit)
     {
         Vector2 start = transform.position;
         Vector2 end = start + new Vector2(xDir, yDir);
         boxCollider.enabled = false; //so our linecast doesn't hit our own collider
         hit = Physics2D.Linecast(start, end, blockingLayer);
+        boxCollider.enabled = true;
         if(hit.transform == null)
         {
             StartCoroutine(SmoothMovement(end));
+            return true;
         }
+        return false;
     }
 
     protected virtual void AttemptMove<T>(int xDir, int yDir) where T : Component
