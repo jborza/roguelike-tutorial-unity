@@ -41,12 +41,6 @@ public class Player : MovingObject {
         food--;
         base.AttemptMove<T>(xDir, yDir);
         RaycastHit2D hit;
-        //If Move returns true, meaning Player was able to move into an empty space.
-        if (Move(xDir, yDir, out hit))
-        {
-            Debug.Log("AttemptMove of Player succeeded");
-            //Call RandomizeSfx of SoundManager to play the move sound, passing in two audio clips to choose from.
-        }
         CheckIfGameOver();
         GameManager.Instance.playersTurn = false;
     }
@@ -107,8 +101,6 @@ public class Player : MovingObject {
 
         if (horizontal == 0 && vertical == 0)
             return;
-
-        Debug.Log("horizontal:" + horizontal + " vertical: " + vertical);
 
         //attempt to move into a wall
         AttemptMove<Wall>(horizontal, vertical);
